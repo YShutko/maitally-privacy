@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maitally – Account löschen</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green-dark: #1E5C35;
+            --green-mid: #2D7A4A;
+            --green-light: #E8F5EE;
+            --border: #D8E8DF;
+            --bg: #F7FAF8;
+            --white: #FFFFFF;
+            --text: #1A1A1A;
+            --text-muted: #666;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        header {
+            background: var(--green-dark);
+            padding: 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+
+        .header-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-text h1 { font-size: 20px; font-weight: 700; color: white; }
+        .header-text p { font-size: 12px; color: rgba(255,255,255,0.65); margin: 0; }
+
+        .hero {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+            padding: 40px 24px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-icon { font-size: 40px; margin-bottom: 12px; }
+        .hero h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .hero p { font-size: 14px; color: rgba(255,255,255,0.75); }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 32px 24px 64px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .card h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--green-dark);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step:last-child { border-bottom: none; }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: var(--green-dark);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-content .title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .step-content .desc {
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .data-row:last-child { border-bottom: none; }
+        .data-row .label { color: var(--text); font-weight: 500; }
+
+        .chip-deleted {
+            background: #FDECEA;
+            color: #C0392B;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .chip-kept {
+            background: #FFF3CD;
+            color: #856404;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: var(--green-light);
+            border-left: 4px solid var(--green-dark);
+            border-radius: 0 8px 8px 0;
+            padding: 14px 16px;
+            font-size: 14px;
+            color: #2A4A35;
+            margin: 12px 0;
+        }
+
+        .contact-box {
+            background: var(--green-dark);
+            border-radius: 12px;
+            padding: 24px;
+            color: white;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .contact-box h3 { color: white; font-size: 16px; margin-bottom: 8px; }
+        .contact-box p { color: rgba(255,255,255,0.75); font-size: 14px; margin-bottom: 16px; }
+
+        .contact-box a {
+            display: inline-block;
+            background: white;
+            color: var(--green-dark);
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        footer {
+            background: var(--green-dark);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="header-text">
+            <h1>Maitally</h1>
+            <p>Account löschen · Delete Account</p>
+        </div>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="hero-icon">🗑️</div>
+    <h2>Account löschen</h2>
+    <p>Hier erfahren Sie, wie Sie Ihren Maitally-Account und alle zugehörigen Daten löschen können.</p>
+</div>
+
+<div class="container">
+
+    <!-- IN-APP -->
+    <div class="card">
+        <h2>📱 Account direkt in der App löschen</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <div class="title">App öffnen & einloggen</div>
+                <div class="desc">Öffnen Sie die Maitally-App und melden Sie sich mit Ihrem Account an.</div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <div class="title">Einstellungen öffnen</div>
+                <div class="desc">Tippen Sie auf das Zahnrad-Symbol (⚙️) oben rechts auf der Startseite.</div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <div class="title">„Account löschen" auswählen</div>
+                <div class="desc">Scrollen Sie nach unten und tippen Sie auf „Account löschen" im Bereich „Gefahrenzone".</div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <div class="title">Löschung bestätigen</div>
+                <div class="desc">Bestätigen Sie die Löschung. Der Vorgang ist unwiderruflich und wird sofort ausgeführt.</div>
+            </div>
+        </div>
+        <div class="highlight-box">
+            ✓ Die Löschung erfolgt sofort und ist unwiderruflich. Sie werden automatisch ausgeloggt.
+        </div>
+    </div>
+
+    <!-- WHAT GETS DELETED -->
+    <div class="card">
+        <h2>🗂️ Was wird gelöscht?</h2>
+        <div class="data-row">
+            <span class="label">Firebase Auth Account (Login)</span>
+            <span class="chip-deleted">Sofort gelöscht</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Nutzerprofil (users Collection)</span>
+            <span class="chip-deleted">Sofort gelöscht</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Alle Dokumente & Analysen</span>
+            <span class="chip-deleted">Sofort gelöscht</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Alle Todos & Aufgaben</span>
+            <span class="chip-deleted">Sofort gelöscht</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Originalfotos (Firebase Storage)</span>
+            <span class="chip-deleted">Sofort gelöscht</span>
+        </div>
+        <div class="data-row">
+            <span class="label">FCM Push-Token</span>
+            <span class="chip-deleted">Sofort gelöscht</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Support-Nachrichten</span>
+            <span class="chip-kept">Bis zu 30 Tage (gesetzliche Aufbewahrung)</span>
+        </div>
+        <div class="data-row">
+            <span class="label">System-Logs (Cloud Functions)</span>
+            <span class="chip-kept">Max. 30 Tage (automatisch)</span>
+        </div>
+    </div>
+
+    <!-- ALTERNATIVE -->
+    <div class="contact-box">
+        <h3>Alternativ: Löschung per E-Mail beantragen</h3>
+        <p>Falls Sie keinen Zugang zur App haben, können Sie die Löschung Ihres Accounts und aller Daten per E-Mail beantragen. Wir bearbeiten Ihre Anfrage innerhalb von 72 Stunden.</p>
+        <a href="mailto:support@maitally.de?subject=Account-Löschung&body=Bitte löschen Sie meinen Maitally-Account und alle zugehörigen Daten.%0A%0AMeine E-Mail-Adresse: ">support@maitally.de</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Maitally · <a href="index.html">Datenschutzerklärung</a> ·
+    <a href="mailto:support@maitally.de">support@maitally.de</a>
+</footer>
+
+</body>
+</html>
