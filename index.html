@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maitally – Datenschutzerklärung</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green-dark: #1E5C35;
+            --green-mid: #2D7A4A;
+            --green-light: #E8F5EE;
+            --tan: #B5A080;
+            --text: #1A1A1A;
+            --text-muted: #666;
+            --border: #D8E8DF;
+            --bg: #F7FAF8;
+            --white: #FFFFFF;
+            --warning-bg: #FFF8E1;
+            --warning-border: #F0C040;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--green-dark);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .app-icon-header {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+        }
+
+        .header-text h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .header-text p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.65);
+            margin: 0;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+            padding: 48px 24px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .hero .subtitle {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 12px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* MAIN */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 24px 64px;
+        }
+
+        /* NOTICE */
+        .notice {
+            background: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-left: 4px solid #F0A000;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-size: 13.5px;
+            color: #7A5500;
+            margin-bottom: 28px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .notice span { flex-shrink: 0; font-size: 16px; }
+
+        /* TEAM CARD */
+        .team-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+        }
+
+        .team-card h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--green-dark);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .team-members { grid-template-columns: 1fr; }
+        }
+
+        .member {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .member-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--green-dark);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .member-info .name {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .member-info .role {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* SECTION */
+        .section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-num {
+            width: 30px;
+            height: 30px;
+            background: var(--green-dark);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        p { margin-bottom: 12px; color: #444; font-size: 14.5px; }
+        p:last-child { margin-bottom: 0; }
+
+        h3 {
+            font-size: 14px;
+            color: var(--green-mid);
+            font-weight: 600;
+            margin: 18px 0 8px;
+        }
+
+        /* TABLE */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin: 12px 0;
+        }
+
+        .data-table th {
+            background: var(--green-dark);
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table th:first-child { border-radius: 8px 0 0 0; }
+        .data-table th:last-child { border-radius: 0 8px 0 0; }
+
+        .data-table td {
+            padding: 9px 12px;
+            color: #444;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .data-table tr:nth-child(even) td { background: var(--green-light); }
+        .data-table tr:last-child td { border-bottom: none; }
+
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: var(--green-light);
+            border-left: 4px solid var(--green-dark);
+            border-radius: 0 8px 8px 0;
+            padding: 14px 16px;
+            margin: 12px 0;
+            font-size: 14px;
+            color: #2A4A35;
+        }
+
+        /* LIST */
+        ul.clean-list {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0;
+        }
+
+        ul.clean-list li {
+            padding: 5px 0 5px 20px;
+            position: relative;
+            font-size: 14px;
+            color: #444;
+            border-bottom: 1px solid var(--border);
+        }
+
+        ul.clean-list li:last-child { border-bottom: none; }
+
+        ul.clean-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green-dark);
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* RIGHTS GRID */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 12px 0;
+        }
+
+        .right-item {
+            background: var(--green-light);
+            border-radius: 8px;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+        }
+
+        .right-item .art {
+            font-size: 11px;
+            color: var(--green-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .right-item .right-name {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 2px 0;
+        }
+
+        .right-item .right-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* CONTACT */
+        .contact-box {
+            background: var(--green-dark);
+            border-radius: 12px;
+            padding: 24px;
+            color: white;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .contact-box h3 { color: white; font-size: 16px; margin-bottom: 8px; }
+        .contact-box p { color: rgba(255,255,255,0.8); margin-bottom: 12px; font-size: 14px; }
+        .contact-box a {
+            display: inline-block;
+            background: white;
+            color: var(--green-dark);
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .contact-box a:hover { background: var(--green-light); }
+
+        /* STATUS CHIPS */
+        .chip {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11.5px;
+            font-weight: 600;
+        }
+        .chip-green { background: #D4EDDA; color: #155724; }
+        .chip-pending { background: #FFF3CD; color: #856404; }
+
+        /* FOOTER */
+        footer {
+            background: var(--green-dark);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 24px;
+            font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+
+        a { color: var(--green-mid); }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <svg class="app-icon-header" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="10" fill="white" fill-opacity="0.15"/>
+            <path d="M11 8h16l8 8v20a2 2 0 01-2 2H11a2 2 0 01-2-2V10a2 2 0 012-2z" fill="white" fill-opacity="0.9"/>
+            <path d="M27 8l8 8h-8V8z" fill="#B5A080"/>
+            <path d="M15 22l4 5 3-4 3 4 4-5" stroke="#1E5C35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="header-text">
+            <h1>Maitally</h1>
+            <p>Datenschutzerklärung · Privacy Policy</p>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <h2>Datenschutzerklärung</h2>
+    <p class="subtitle">Stand: Juni 2026 · de.maitally.app</p>
+    <div class="hero-badges">
+        <div class="badge">🇩🇪 DSGVO-konform</div>
+        <div class="badge">🇪🇺 EU-Server (Frankfurt)</div>
+        <div class="badge">🔒 Keine Datenweitergabe</div>
+        <div class="badge">🗑️ Sofortlöschung der Originale</div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- NOTICE -->
+    <div class="notice">
+        <span>⚠️</span>
+        <div>Diese Datenschutzerklärung wird derzeit vervollständigt. Die vollständige rechtlich geprüfte Version wird in Kürze veröffentlicht. Bei Fragen: <a href="mailto:support@maitally.de">support@maitally.de</a></div>
+    </div>
+
+    <!-- TEAM -->
+    <div class="team-card">
+        <h3>Entwicklungsteam &amp; Verantwortliche</h3>
+        <div class="team-members">
+            <div class="member">
+                <div class="member-avatar">YS</div>
+                <div class="member-info">
+                    <div class="name">M.Sc. Yulia Shutko</div>
+                    <div class="role">Lead Developer · Verantwortliche</div>
+                </div>
+            </div>
+            <div class="member">
+                <div class="member-avatar">FF</div>
+                <div class="member-info">
+                    <div class="name">Prof. Dr.-Ing. Fabian Fürst</div>
+                    <div class="role">Co-Developer · Rechtliche Beratung</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. VERANTWORTLICHER -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">1</div>
+            <h2>Verantwortliche Stelle</h2>
+        </div>
+        <p><strong>M.Sc. Yulia Shutko</strong><br>
+        E-Mail: <a href="mailto:support@maitally.de">support@maitally.de</a><br>
+        App: de.maitally.app</p>
+        <div class="highlight-box">
+            Zuständige Aufsichtsbehörde: <strong>Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)</strong> — zuständig als bundesweit operierende SaaS-App.
+        </div>
+    </div>
+
+    <!-- 2. ÜBERBLICK -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">2</div>
+            <h2>Kurzüberblick</h2>
+        </div>
+        <p>Maitally verarbeitet personenbezogene Daten ausschließlich zur Bereitstellung der App-Funktionen: KI-gestützte Analyse von deutschen Behördenbriefen, Aufgabenverwaltung und Fristenübersicht.</p>
+        <p>Da Nutzer Behördenbriefe hochladen, können je nach Inhalt auch <strong>besondere Kategorien personenbezogener Daten</strong> (Art. 9 DSGVO) verarbeitet werden, insbesondere Gesundheitsdaten oder andere sensible Informationen. Nutzer willigen durch die Registrierung ausdrücklich in die Verarbeitung dieser Daten ein.</p>
+        <div class="highlight-box">
+            ℹ️ KI-generierte Zusammenfassungen können fehlerhaft oder unvollständig sein. Nutzer müssen wichtige Inhalte — insbesondere Fristen, Zahlungspflichten und rechtliche Anforderungen — anhand des Originaldokuments selbst prüfen. Die App ersetzt keine Rechts-, Steuer- oder Finanzberatung.
+        </div>
+    </div>
+
+    <!-- 3. VERARBEITUNGEN -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">3</div>
+            <h2>Verarbeitungsvorgänge im Überblick</h2>
+        </div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Vorgang</th>
+                    <th>Datenkategorien</th>
+                    <th>Zweck</th>
+                    <th>Rechtsgrundlage</th>
+                    <th>Speicherdauer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Registrierung &amp; Login</strong></td>
+                    <td>E-Mail, Passwort-Hash, Account-ID</td>
+                    <td>Nutzerkontoverwaltung</td>
+                    <td>Art. 6 Abs. 1 lit. b</td>
+                    <td>Bis Kontolöschung</td>
+                </tr>
+                <tr>
+                    <td><strong>Dokumenten-Upload</strong></td>
+                    <td>Dokumentbild (Foto/PDF)</td>
+                    <td>KI-Analyse</td>
+                    <td>Art. 6 Abs. 1 lit. b; Art. 9 Abs. 2 lit. a bei sensiblen Daten</td>
+                    <td><strong>Sofortlöschung nach Analyse</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>KI-Analyse</strong></td>
+                    <td>Extrahierter Text, Zusammenfassung, Fristen, Kategorie</td>
+                    <td>App-Funktion bereitstellen</td>
+                    <td>Art. 6 Abs. 1 lit. b</td>
+                    <td>Bis Dokument gelöscht</td>
+                </tr>
+                <tr>
+                    <td><strong>KI-Chat</strong></td>
+                    <td>Extrahierter Text als Kontext, Chat-Verlauf</td>
+                    <td>Dokumentfragen beantworten</td>
+                    <td>Art. 6 Abs. 1 lit. b</td>
+                    <td>Bis Dokument gelöscht</td>
+                </tr>
+                <tr>
+                    <td><strong>Push-Benachrichtigungen</strong></td>
+                    <td>FCM-Token, Fristendetails</td>
+                    <td>Fristenerinnerungen</td>
+                    <td>Art. 6 Abs. 1 lit. a (Einwilligung)</td>
+                    <td>Bis Widerruf / Kontolöschung</td>
+                </tr>
+                <tr>
+                    <td><strong>Support</strong></td>
+                    <td>Name, E-Mail, Nachrichteninhalt</td>
+                    <td>Supportanfragen bearbeiten</td>
+                    <td>Art. 6 Abs. 1 lit. b/f</td>
+                    <td>Bis Abschluss der Anfrage</td>
+                </tr>
+                <tr>
+                    <td><strong>Abrechnung</strong></td>
+                    <td>Abo-Status, Transaktionsdaten</td>
+                    <td>Zahlungsabwicklung</td>
+                    <td>Art. 6 Abs. 1 lit. b/c</td>
+                    <td>Gesetzliche Aufbewahrungsfristen</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 4. INFRASTRUKTUR -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">4</div>
+            <h2>Infrastruktur &amp; Speicherort</h2>
+        </div>
+        <p>Alle Daten werden <strong>ausschließlich in der EU</strong> verarbeitet und gespeichert. Es findet keine Übermittlung in Drittländer statt.</p>
+        <table class="data-table">
+            <thead>
+                <tr><th>Dienst</th><th>Anbieter</th><th>Region</th><th>Zweck</th><th>AVV</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Datenbank, Auth, Storage</td>
+                    <td>Google Firebase</td>
+                    <td>europe-west3 (Frankfurt)</td>
+                    <td>Nutzerdaten, Dokumente, Medien</td>
+                    <td><span class="chip chip-green">✓ Google Cloud DPA</span></td>
+                </tr>
+                <tr>
+                    <td>KI-Analyse</td>
+                    <td>Google Vertex AI (Gemini 2.5 Flash)</td>
+                    <td>europe-west3 (Frankfurt)</td>
+                    <td>Dokumentenanalyse</td>
+                    <td><span class="chip chip-green">✓ Google Cloud DPA</span></td>
+                </tr>
+                <tr>
+                    <td>Backend-Logik</td>
+                    <td>Google Cloud Functions</td>
+                    <td>europe-west3 (Frankfurt)</td>
+                    <td>Serverlose Verarbeitung</td>
+                    <td><span class="chip chip-green">✓ Google Cloud DPA</span></td>
+                </tr>
+                <tr>
+                    <td>Push-Nachrichten</td>
+                    <td>Firebase Cloud Messaging</td>
+                    <td>europe-west3 (Frankfurt)</td>
+                    <td>Benachrichtigungen</td>
+                    <td><span class="chip chip-green">✓ Google Cloud DPA</span></td>
+                </tr>
+                <tr>
+                    <td>E-Mail (Support)</td>
+                    <td>IONOS</td>
+                    <td>Deutschland</td>
+                    <td>support@maitally.de</td>
+                    <td><span class="chip chip-green">✓ EU-Anbieter</span></td>
+                </tr>
+                <tr>
+                    <td>Abonnements</td>
+                    <td>RevenueCat</td>
+                    <td>[wird ergänzt]</td>
+                    <td>Abo-Verwaltung</td>
+                    <td><span class="chip chip-pending">⏳ Geplant</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="highlight-box">
+            Hochgeladene Dokumentbilder (Originalfotos) werden unmittelbar nach erfolgreicher KI-Analyse automatisch und unwiderruflich gelöscht — sowohl aus dem Speicher als auch aus der Datenbank. Es werden ausschließlich die extrahierten Textinhalte und Zusammenfassungen gespeichert.
+        </div>
+    </div>
+
+    <!-- 5. KEIN KI-TRAINING -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">5</div>
+            <h2>Keine Nutzung zum KI-Training</h2>
+        </div>
+        <p>Hochgeladene Dokumente, extrahierte Texte, Prompts und KI-Ausgaben werden <strong>nicht</strong> verwendet, um KI-Modelle zu trainieren — weder eigene noch fremde. Die Verarbeitung durch Vertex AI (Gemini) erfolgt ausschließlich zur Bereitstellung der App-Funktion im Rahmen des Google Cloud DPA.</p>
+    </div>
+
+    <!-- 6. LÖSCHUNG -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">6</div>
+            <h2>Löschung &amp; Speicherfristen</h2>
+        </div>
+        <table class="data-table">
+            <thead>
+                <tr><th>Datenkategorie</th><th>Löschmechanismus</th><th>Frist</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Originalfotos (Storage)</td><td>Automatisch nach KI-Analyse (Cloud Function)</td><td><strong>Sofort</strong></td></tr>
+                <tr><td>Verbleibende Storage-Objekte</td><td>Automatische Lifecycle-Regel (Google Cloud)</td><td>30 Tage</td></tr>
+                <tr><td>Dokumente (Firestore)</td><td>Manuell durch Nutzer oder delete_document Function</td><td>Auf Anfrage</td></tr>
+                <tr><td>Nutzerprofil</td><td>delete_account Function (in App verfügbar)</td><td>Auf Anfrage (Art. 17)</td></tr>
+                <tr><td>Firebase Auth Account</td><td>Automatisch mit Account-Löschung</td><td>Mit Profil</td></tr>
+                <tr><td>Cloud Function Logs</td><td>Google Cloud Logging Standard</td><td>30 Tage</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 7. BETROFFENENRECHTE -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">7</div>
+            <h2>Ihre Rechte (Art. 15–21 DSGVO)</h2>
+        </div>
+        <div class="rights-grid">
+            <div class="right-item">
+                <div class="art">Art. 15</div>
+                <div class="right-name">Auskunft</div>
+                <div class="right-desc">Alle gespeicherten Daten abrufbar in der App</div>
+            </div>
+            <div class="right-item">
+                <div class="art">Art. 16</div>
+                <div class="right-name">Berichtigung</div>
+                <div class="right-desc">Einstellungen jederzeit änderbar in der App</div>
+            </div>
+            <div class="right-item">
+                <div class="art">Art. 17</div>
+                <div class="right-name">Löschung</div>
+                <div class="right-desc">Account-Löschung direkt in App → Einstellungen</div>
+            </div>
+            <div class="right-item">
+                <div class="art">Art. 18</div>
+                <div class="right-name">Einschränkung</div>
+                <div class="right-desc">Über support@maitally.de</div>
+            </div>
+            <div class="right-item">
+                <div class="art">Art. 20</div>
+                <div class="right-name">Datenübertragbarkeit</div>
+                <div class="right-desc">Export über Support-Kanal</div>
+            </div>
+            <div class="right-item">
+                <div class="art">Art. 21</div>
+                <div class="right-name">Widerspruch</div>
+                <div class="right-desc">Push-Nachrichten jederzeit deaktivierbar</div>
+            </div>
+            <div class="right-item">
+                <div class="art">Einwilligung</div>
+                <div class="right-name">Widerruf</div>
+                <div class="right-desc">Biometrie und Push jederzeit in Einstellungen</div>
+            </div>
+            <div class="right-item">
+                <div class="art">Art. 77</div>
+                <div class="right-name">Beschwerde</div>
+                <div class="right-desc">Bei BfDI: www.bfdi.bund.de</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. TOMs -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">8</div>
+            <h2>Technische &amp; Organisatorische Maßnahmen (TOMs)</h2>
+        </div>
+        <h3>Zugriffskontrolle</h3>
+        <ul class="clean-list">
+            <li>Firestore Security Rules: Nutzer können ausschließlich eigene Daten lesen/schreiben (uid == request.auth.uid)</li>
+            <li>Firebase Storage Rules: Zugriff nur auf eigenen /users/{userId}/ Ordner, max. 10 MB</li>
+            <li>Cloud Functions: JWT Bearer Token Authentifizierung für alle Endpunkte</li>
+            <li>Firebase Auth: E-Mail/Passwort + Google Sign-In</li>
+        </ul>
+        <h3>Verschlüsselung</h3>
+        <ul class="clean-list">
+            <li>Transport: HTTPS/TLS für alle API-Aufrufe</li>
+            <li>At Rest: Google Cloud Standard-Verschlüsselung (AES-256)</li>
+            <li>Secrets: IONOS SMTP-Passwort via Firebase Secret Manager</li>
+        </ul>
+        <h3>Biometrische Authentifizierung</h3>
+        <ul class="clean-list">
+            <li>Optionale biometrische Sperre (Fingerabdruck/Face ID) in der App</li>
+            <li>Aktivierbar/deaktivierbar in Einstellungen durch den Nutzer</li>
+            <li>Bei Fehlschlag: automatischer Logout</li>
+        </ul>
+        <h3>Datensparsamkeit</h3>
+        <ul class="clean-list">
+            <li>Originaldokumente werden sofort nach KI-Analyse gelöscht</li>
+            <li>Keine Logs mit Dokumenteninhalt</li>
+            <li>Kein KI-Training mit Nutzerdaten</li>
+        </ul>
+    </div>
+
+    <!-- KONTAKT -->
+    <div class="contact-box">
+        <h3>Datenschutzanfragen &amp; Kontakt</h3>
+        <p>Bei Fragen zum Datenschutz, Auskunftsersuchen oder zur Ausübung Ihrer Rechte wenden Sie sich bitte an:</p>
+        <a href="mailto:support@maitally.de">support@maitally.de</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Maitally · M.Sc. Yulia Shutko &amp; Prof. Dr.-Ing. Fabian Fürst ·
+    <a href="mailto:support@maitally.de">support@maitally.de</a> ·
+    de.maitally.app
+</footer>
+
+</body>
+</html>
